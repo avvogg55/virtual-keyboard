@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(43, 43, 43);
+}
+
+.keyboard {
+    margin: 10% auto;
+    width: 1000px;
+    background-color: rgb(194, 63, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.keyboard__block {
+    margin: 10px 0;
+    width: 960px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    margin: 10px 0;
+}
+
+.line {
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.line__button {
+    width: 54px;
+    height: 54px;
+    box-sizing: border-box;
+    background-color: rgb(182, 30, 253);
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 17px;
+}
+
+.long {
+    width: 120px;
+    height: 54px;
+}
+
+.medium {
+    width: 92px;
+    height: 54px;
+}
+
+.space-style {
+    width: 318px;
+    height: 54px;
+}
+
+.tab-style {
+    width: 84px;
+    height: 54px;
+}
