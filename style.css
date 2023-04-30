@@ -4,7 +4,8 @@ body {
 
 .keyboard {
     margin: 10% auto;
-    width: 1000px;
+    width: 70%;
+    height: 70%;
     background-color: rgb(194, 63, 255);
     display: flex;
     flex-direction: column;
@@ -14,51 +15,53 @@ body {
 
 .keyboard__block {
     margin: 10px 0;
-    width: 960px;
-    height: 320px;
+    width: 98%;
+    height: 28vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 textarea {
-    width: 500px;
+    width: 98%;
     height: 100px;
     margin: 10px 0;
 }
 
 .line {
-    height: 54px;
+    height: 16%;
     display: flex;
     justify-content: space-between;
 }
 
 .line__button {
-    width: 54px;
-    height: 54px;
+    width: 6%;
+    height: 100%;
     box-sizing: border-box;
     background-color: rgb(182, 30, 253);
     border-radius: 5px;
     text-align: center;
-    padding-top: 17px;
+    color: #ffffff;
+    font-size: large;
+    transition: background-color 0.5s ease;
+}
+
+.line__button:hover {
+    background-color: rgb(162, 0, 236);
 }
 
 .long {
-    width: 120px;
-    height: 54px;
+    width: 13%;
 }
 
 .medium {
-    width: 92px;
-    height: 54px;
+    width: 8%;
 }
 
 .space-style {
-    width: 318px;
-    height: 54px;
+    width: 40%;
 }
 
 .tab-style {
-    width: 84px;
-    height: 54px;
+    width: 7%;
 }
