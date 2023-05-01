@@ -43,7 +43,6 @@ textarea {
     text-align: center;
     color: #ffffff;
     transition: background-color 0.5s ease;
-    border: none;
 }
 
 .line__button:focus {
@@ -52,6 +51,14 @@ textarea {
 
 .active-button{
     background-color: rgb(108, 0, 157);
+}
+
+.shift-active{
+    background-color: rgb(108, 0, 157);
+}
+
+.caps-active{
+    background-color: rgb(255, 0, 111);
 }
 
 .long {
@@ -68,4 +75,10 @@ textarea {
 
 .tab-style {
     width: 7%;
+}
+
+.heading{
+    color: rgb(174, 0, 255);
+    margin: 2% 35%;
+    font-weight: 900;
 }
