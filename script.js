@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-
+//-----------------creation of DOM-------------------------
 const heading = document.createElement('h1');
 heading.innerHTML = "Gleb's Keyboard";
 heading.classList.add('heading');
@@ -18,7 +18,7 @@ body.appendChild(keyboard);
 
 keyboard.appendChild(textArea);
 keyboard.appendChild(keyboardBlock);
-
+//----------------buttons appender-------------------------
 function appendButtons(i, line) {
   const lBS = 'square';
   const lBL = 'long';
@@ -140,9 +140,9 @@ function appendLines(parent) {
     parent.appendChild(line);
   }
 }
-
+//----------------append keyboard lines----------------
 appendLines(keyboardBlock);
-
+//-------------------buttons ids object----------------
 const buttonIds = {
   ArrowUp: 'up',
   ArrowDown: 'down',
@@ -231,7 +231,9 @@ const buttonIds = {
   M: 'm-button',
 };
 
-keyboardBlock.addEventListener('click', (event) => {
+//-------------------------click listeners------------------------------
+
+keyboardBlock.addEventListener('click', (event) => { //capslock button
   const caps = document.querySelector('#caps-lock');
   if (event.target.classList.contains('input-btn')) {
     if (caps.classList.contains('caps-active')) {
@@ -249,21 +251,21 @@ keyboardBlock.addEventListener('click', (event) => {
   }
 });
 
-keyboardBlock.addEventListener('click', (event) => {
+keyboardBlock.addEventListener('click', (event) => { //space button
   if (event.target.id === 'space') {
     textArea.value += ' ';
     event.preventDefault();
   }
 });
 
-keyboardBlock.addEventListener('click', (event) => {
+keyboardBlock.addEventListener('click', (event) => { //enter button
   if (event.target.id === 'enter') {
     textArea.value += '\n';
     event.preventDefault();
   }
 });
 
-keyboardBlock.addEventListener('click', (event) => {
+keyboardBlock.addEventListener('click', (event) => { //tab button
   if (event.target.id === 'tab') {
     textArea.value += '\t';
     event.preventDefault();
@@ -310,7 +312,9 @@ keyboard.addEventListener('click', (event) => {
   }
 });
 
-const winKey = document.querySelector('#win');
+//-------------------------key listeners------------------------------
+
+const winKey = document.querySelector('#win'); //win button
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Meta' || event.key === 'Win') {
@@ -324,7 +328,7 @@ document.addEventListener('keyup', (event) => {
   }
 });
 
-const leftAltButton = document.querySelector('#left-alt');
+const leftAltButton = document.querySelector('#left-alt'); //alt buttons
 const rightAltButton = document.querySelector('#right-alt');
 
 document.addEventListener('keydown', (event) => {
@@ -347,7 +351,7 @@ document.addEventListener('keyup', (event) => {
   }
 });
 
-const ctrlLeftKey = document.querySelector('#left-ctrl');
+const ctrlLeftKey = document.querySelector('#left-ctrl'); //ctrl buttons
 const ctrlRightKey = document.querySelector('#right-ctrl');
 
 document.addEventListener('keydown', (event) => {
@@ -374,7 +378,7 @@ document.addEventListener('keyup', (event) => {
   }
 });
 
-const capsLockButton = document.querySelector('#caps-lock');
+const capsLockButton = document.querySelector('#caps-lock'); //capslock button
 
 document.addEventListener('keydown', (event) => {
   if (event.getModifierState('CapsLock')) {
@@ -388,7 +392,7 @@ document.addEventListener('keyup', (event) => {
   }
 });
 
-const shiftLeftBtn = document.querySelector('#left-shift');
+const shiftLeftBtn = document.querySelector('#left-shift'); //shift buttons
 const shiftRightBtn = document.querySelector('#right-shift');
 
 document.addEventListener('keydown', (event) => {
@@ -411,7 +415,7 @@ document.addEventListener('keyup', (event) => {
   }
 });
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => { //all input buttons
   event.preventDefault();
   const buttonId = buttonIds[event.key];
   if (buttonId) {
@@ -423,7 +427,7 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => { //del backspace and left and right arrows
   if (event.key === 'ArrowLeft') {
     textArea.selectionStart = Math.max(0, textArea.selectionStart - 1);
     textArea.selectionEnd = textArea.selectionStart;
@@ -487,7 +491,7 @@ function getNewLinePos(lines, newLine, cursorPos) {
   return charCount + lines[newLine].length;
 }
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => { // up and down arrows
   const key = event.key;
   const cursorPos = textArea.selectionStart;
   const lines = textArea.value.split('\n');
@@ -509,14 +513,14 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => { //enter button
   if (event.key === 'Enter') {
     textArea.value += '\n';
     event.preventDefault();
   }
 });
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => { //tab button
   if (event.key === 'Tab') {
     event.preventDefault();
     const start = textArea.selectionStart;
@@ -527,13 +531,13 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => { //space button
   if (event.key === ' ') {
     textArea.value += ' ';
   }
 });
 
-document.addEventListener('keyup', (event) => {
+document.addEventListener('keyup', (event) => { //keyup for all buttons
   const buttonId = buttonIds[event.key];
   if (buttonId) {
     const button = document.getElementById(buttonId);
